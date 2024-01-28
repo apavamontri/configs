@@ -11,8 +11,7 @@
 
 ## Font
 
-* [Monaspace](https://monaspace.githubnext.com/)
-* [GitHub](https://github.com/githubnext/monaspace)
+* [Meslo](https://github.com/andreberg/Meslo-Font)
 
 ## Themes
 
