@@ -1,0 +1,76 @@
+# letsblock.it filter list export
+#
+# List token: 58f2b2bc-381f-4713-9e74-1dacb96b9fcc
+# Export date: 2024-05-17
+#
+# You can edit this file and render it locally, check out instructions at:
+# https://github.com/letsblockit/letsblockit/tree/main/cmd/render/README.md
+
+title: My filters
+instances:
+    - template: fandom-cleanup
+      params:
+        age-gate: false
+        blue-wikia-bar: true
+        bottom-notifications: true
+        edit-buttons: true
+        explore-menu: true
+        fan-footer: true
+        global-footer: true
+        reviews: true
+        right-sidebar: true
+        search: true
+        selection-container: true
+        yellow-sidebar: true
+    - template: google-search-cleanup
+      params:
+        also-search: true
+        page-footer: false
+        question-answer-box: false
+        related-questions: true
+        related-searches: true
+        review-pane: false
+        rich-results: false
+        similar-image-searches: true
+    - template: search-results
+      params:
+        bing: true
+        brave: false
+        brave-onion: false
+        duckduckgo: true
+        duckduckgo-html: true
+        duckduckgo-lite: true
+        duckduckgo-onion: false
+        google: true
+        kagi: false
+        searx-enable: false
+        searx-instances:
+            - searx.thegpm.org
+        sites:
+            - .quora.
+            - .pinterest.
+            - .logrocket.
+            - .makeuseof.
+        sites---preset---blockmodreposting: false
+        sites---preset---github-copycats: true
+        sites---preset---npm-copycats: true
+        sites---preset---stackoverflow-copycats: true
+        sites---preset---wikipedia-copycats: true
+        startpage: false
+    - template: youtube-cleanup
+      params:
+        channel-clarification: false
+        disable-inifite-scrolling-shorts: false
+        no-ambient-mode: false
+        no-fullscreen-on-dblclick: false
+        no-swipe-actions: false
+        remove-channel-info: false
+        remove-chapters: false
+        remove-chat-reaction-bar: true
+        remove-comment-section: false
+        remove-comments-with-words: null
+        remove-copyright-notice: false
+        remove-stream-chat: true
+        remove-text-after-buttons-below-video: false
+        remove-transcript: false
+        remove-video-hashtags: false
