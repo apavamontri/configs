@@ -3,6 +3,20 @@
 ! Homepage: https://letsblock.it
 ! License: https://github.com/letsblockit/letsblockit/blob/main/LICENSE.txt
 
+! amazon-products
+!! amazon-products with amazon-devices preset
+amazon.*###search h2 span:has-text(/\bEcho (Dot|Show|Studio|Sub|Buds|Auto|Flex)\b/):upward(div.s-result-item)
+amazon.*##div.deals-react-app div[class^=DealContent]:has-text(/\bEcho (Dot|Show|Studio|Sub|Buds|Auto|Flex)\b/):upward(div[class^=DealGridItem-module__dealItemDisplayGrid])
+amazon.*###search h2 span:has-text(/\bEcho \(4\w+/):upward(div.s-result-item)
+amazon.*##div.deals-react-app div[class^=DealContent]:has-text(/\bEcho \(4\w+/):upward(div[class^=DealGridItem-module__dealItemDisplayGrid])
+amazon.*###search h2 span:has-text(/\bKindle\b/):upward(div.s-result-item)
+amazon.*##div.deals-react-app div[class^=DealContent]:has-text(/\bKindle\b/):upward(div[class^=DealGridItem-module__dealItemDisplayGrid])
+amazon.*###search h2 span:has-text(/\bFire TV (Stick|Cube)\b/):upward(div.s-result-item)
+amazon.*##div.deals-react-app div[class^=DealContent]:has-text(/\bFire TV (Stick|Cube)\b/):upward(div[class^=DealGridItem-module__dealItemDisplayGrid])
+!! amazon-products with amazon-basics preset
+amazon.*###search h2 span:has-text(/\bAmazon Basics\b/):upward(div.s-result-item)
+amazon.*##div.deals-react-app div[class^=DealContent]:has-text(/\bAmazon Basics\b/):upward(div[class^=DealGridItem-module__dealItemDisplayGrid])
+
 ! fandom-cleanup
 fandom.com##.global-navigation
 fandom.com##.main-container:style(width: 100% !important; margin-left: auto !important; margin-right: auto !important;)
@@ -23,12 +37,35 @@ fandom.com##.mw-editsection
 fandom.com##.reviews
 
 ! google-search-cleanup
+!# Toplevel rich content above columns
+www.google.*###rcnt > div:first-of-type:not([id]) > div:has(g-more-link,g-scrolling-carousel,g-img)
+!# Rich content in normal pages
+www.google.*###rso:has(> div:nth-of-type(6)) > div:has(g-more-link,g-section-with-header)
+!# "Find results on" carousel
+www.google.*###rso:has(> div:nth-of-type(6)) > div:has(div[role="heading"]+g-scrolling-carousel)
+!# New page layout for books / movies / shows, some rich elements are not handled yet
+www.google.*###kp-wp-tab-overview > div:has(g-more-link,g-section-with-header,#media_result_group)
 www.google.*###rso div.related-question-pair:upward(div[jscontroller])
 www.google.*###botstuff #bres
 !# These unfurl after clicking on a result and going back to the results page
 www.google.*###rso div.g div[jscontroller][id^="eob_"]
 www.google.*###rso div.MjjYud:has(div[jsname="Cpkphb"] a[href^="/search?"])
+www.google.*###searchform ul[role="listbox"] > li:upward(div[jsname][role="presentation"])
+www.google.*###searchform:style(--rhs-width: 0px !important; --rhs-margin: 0px !important;)
+!# Desktop browsers
+||google.*/complete/search?q&cp=0$domain=google.*,important
+## Mobile browsers
+||google.*/complete/search?q&pq&cp=0$domain=google.*,important
 www.google.*##div.isv-r[data-rfg]
+www.google.*###rhs #kp-wp-tab-overview div[data-attrid$=" qa"]
+www.google.*###rhs #kp-wp-tab-overview div[data-attrid$="review_summary"]
+www.google.*###rhs #kp-wp-tab-overview div[data-attrid$="third_party_aggregator_ratings"]
+www.google.*###footcnt > #fbarcnt
+
+! linkedin-posts-by-link
+www.linkedin.com##div.occludable-update:has(a[href*="www.linkedin.com/learning"])
+www.linkedin.com##div.occludable-update:has(a[href*="my.previous.corp/careers"])
+www.linkedin.com##div.occludable-update:has(a[href*="pushy-vendor.com"])
 
 ! search-results
 bing.com#?#[id$="results"] cite:has-text(.quora.):upward(li)
@@ -83,6 +120,32 @@ lite.duckduckgo.com##.result-link[href*=".makeuseof."]:upward(tr)
 lite.duckduckgo.com##.result-link[href*=".makeuseof."]:upward(tr) + tr
 lite.duckduckgo.com##.result-link[href*=".makeuseof."]:upward(tr) + tr + tr
 lite.duckduckgo.com##.result-link[href*=".makeuseof."]:upward(tr) + tr + tr + tr
+bing.com#?#[id$="results"] cite:has-text(.medium.):upward(li)
+bing.com#?#a[href*=".medium."]:upward(li[data-idx][style^="width"])
+bing.com#?#[id*="video"] > [href*=".medium."]:upward(.dg_u)
+bing.com##.news-card[url*=".medium."]
+www.google.*##.g:has(a[href*=".medium."])
+www.google.*##a[href*=".medium."]:upward(1)
+duckduckgo.com##ol.react-results--main a[href*=".medium."]:upward(article)
+duckduckgo.com##.tile-wrap a[href*=".medium."]:upward(.tile)
+html.duckduckgo.com##.results a.result__a[href*=".medium."]:upward(.result)
+lite.duckduckgo.com##.result-link[href*=".medium."]:upward(tr)
+lite.duckduckgo.com##.result-link[href*=".medium."]:upward(tr) + tr
+lite.duckduckgo.com##.result-link[href*=".medium."]:upward(tr) + tr + tr
+lite.duckduckgo.com##.result-link[href*=".medium."]:upward(tr) + tr + tr + tr
+bing.com#?#[id$="results"] cite:has-text(medium.):upward(li)
+bing.com#?#a[href*="medium."]:upward(li[data-idx][style^="width"])
+bing.com#?#[id*="video"] > [href*="medium."]:upward(.dg_u)
+bing.com##.news-card[url*="medium."]
+www.google.*##.g:has(a[href*="medium."])
+www.google.*##a[href*="medium."]:upward(1)
+duckduckgo.com##ol.react-results--main a[href*="medium."]:upward(article)
+duckduckgo.com##.tile-wrap a[href*="medium."]:upward(.tile)
+html.duckduckgo.com##.results a.result__a[href*="medium."]:upward(.result)
+lite.duckduckgo.com##.result-link[href*="medium."]:upward(tr)
+lite.duckduckgo.com##.result-link[href*="medium."]:upward(tr) + tr
+lite.duckduckgo.com##.result-link[href*="medium."]:upward(tr) + tr + tr
+lite.duckduckgo.com##.result-link[href*="medium."]:upward(tr) + tr + tr + tr
 !! search-results with github-copycats preset
 !! Source: https://github.com/quenhus/uBlock-Origin-dev-filter/blob/main/data/github_copycats.txt
 !! License: https://github.com/quenhus/uBlock-Origin-dev-filter/blob/main/LICENSE
