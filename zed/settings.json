@@ -1,0 +1,120 @@
+{
+  "theme": "Tokyo Night",
+  "vim_mode": true,
+  "features": {
+    "inline_completion_provider": "none"
+  },
+  "buffer_font_family": "Monaspace Neon",
+  "buffer_font_size": 17,
+  "buffer_line_height": "comfortable",
+  "buffer_font_features": {
+    "calt": true,
+    "zero": true
+  },
+  "ui_font_family": "IBM Plex Sans",
+  "restore_on_startup": "none",
+  "wrap_guides": [
+    80,
+    120
+  ],
+  "show_copilot_suggestions": false,
+  "calls": {
+    "mute_on_join": true,
+    "share_on_join": false
+  },
+  "relative_line_numbers": true,
+  "inlay_hints": {
+    "enabled": false
+  },
+  "project_panel": {
+    "button": false
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "chat_panel": {
+    "button": false
+  },
+  "notification_panel": {
+    "button": false
+  },
+  "assistant": {
+    "version": "1",
+    "enabled": false
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "tabs": {
+    "git_status": true
+  },
+  "preview_tabs": {
+    "enabled": true
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "prettier": {
+    "allowed": false
+  },
+  "terminal": {
+    "font_family": "MesloLGS Nerd Font",
+    "font_size": 15
+  },
+  "indent_guides": {
+    "enabled": true,
+    "line_width": 1,
+    "coloring": "indent_aware",
+    "background_coloring": "indent_aware"
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy"
+        }
+      }
+    }
+  },
+  "languages": {
+    "HTML": {
+      "format_on_save": {
+        "external": {
+          "command": "./node_modules/.bin/prettier",
+          "arguments": [
+            "--stdin-filepath",
+            "{buffer_path}"
+          ]
+        }
+      }
+    },
+    "JavaScript": {
+      "format_on_save": {
+        "external": {
+          "command": "./node_modules/.bin/prettier",
+          "arguments": [
+            "--stdin-filepath",
+            "{buffer_path}"
+          ]
+        }
+      },
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true,
+        "source.organizedImports": true
+      }
+    },
+    "Python": {
+      "format_on_save": {
+        "external": {
+          "command": "black",
+          "arguments": [
+            "-"
+          ]
+        }
+      }
+    }
+  }
+}
