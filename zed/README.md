@@ -1,6 +1,6 @@
 # Zed Editor
 
-Test with Zed [0.137.6]
+Test with [Zed](https://zed.dev/) [0.137.6] or later.
 
 ## Requirements
 
